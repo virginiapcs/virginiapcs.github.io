@@ -1731,10 +1731,14 @@
 	}
 
 	#footer-wrapper {
-		background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");
+		background-image: -moz-linear-gradient(top, #ffff80, #ff6666), url("images/bg03.png"), url("images/bg03.png");
+		background-image: -webkit-linear-gradient(top, #ffff80, #ff6666), url("images/bg03.png"), url("images/bg03.png");
+		background-image: -ms-linear-gradient(top, #ffff80, #ff6666), url("images/bg03.png"), url("images/bg03.png");
+		background-image: linear-gradient(top, #ffff80, #ff6666), url("images/bg03.png"), url("images/bg03.png");
+		/*background-image: -moz-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");
 		background-image: -webkit-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");
 		background-image: -ms-linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");
-		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");
+		background-image: linear-gradient(top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.5)), url("images/bg03.png"), url("images/bg03.png");*/
 		position: relative;
 		background-repeat: repeat-x, no-repeat, repeat;
 		background-size: 100% 100%, 100% 15em, auto auto;
