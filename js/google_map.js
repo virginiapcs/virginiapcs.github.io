@@ -23,6 +23,6 @@
         map.addMarker({
             lat:40.7322483,
             lng: -74.0039488,
-            title: 'Jones Street', 
+            title: 'VPCS', 
         });
     });
