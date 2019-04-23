@@ -254,8 +254,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /* End Top header 2 */
 /* Header Aera */
 .header_aera {
-  background: #f7f7f7;
-  /* background: #fdde33; */
+  background: #fff;
   border-radius: 0;
   border: 0;
   margin: 0;
@@ -598,7 +597,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 .professional_builder {
   background: #f5f5f5;
-  padding-top: 0px;
+  padding-top: 80px;
   padding-bottom: 50px;
 }
 .professional_builder .builder_all .builder {
@@ -623,7 +622,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /*--------------------------------------------------*/
 /* about_us_area */
 .about_us_area {
-  background: #f5f5f5;
+  background: #fefefe;
 }
 .about_us_area .about_row {
   padding-top: 70px;
@@ -674,14 +673,10 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /* End about_us_area */
 /*--------------------------------------------------*/
 .what_we_area {
-  background: #f5f5f5;
-  /* background-color: rgba(248, 184, 29, 0.851); */
-  /* background-color: rgb(255,218,19, 0.851); */
-  /* background-color: rgba(248, 55, 29, 0.2); */
-
+  background: #a94442;
 }
 .what_we_area .tittle h2:after {
-  background: #f5f5f5;
+  background: #fff;
 }
 .what_we_area .tittle h4 {
   color: #333;
@@ -2494,7 +2489,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
   content: "";
   position: absolute;
   top: 0;
-  background-color: rgba(48, 9, 6, 0.8);
+  background-color: rgba(76,14,10, 0.8);
   left: 0;
   right: 0;
   bottom: 0;
