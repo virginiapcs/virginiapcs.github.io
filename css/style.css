@@ -674,7 +674,7 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 /* End about_us_area */
 /*--------------------------------------------------*/
 .what_we_area {
-  background: #f5f5f5;
+  background: #f6b60b;
   /* background-color: rgba(248, 184, 29, 0.851); */
   /* background-color: rgb(255,218,19, 0.851); */
   /* background-color: rgba(248, 55, 29, 0.2); */
@@ -2059,6 +2059,10 @@ a:focus, a:hover, .btn:focus, .btn:hover, button:focus, button:hover {
 .all_contact_info .contact_row .send_message .contact_box button:hover, .all_contact_info .contact_row .send_message .contact_box button:focus {
   color: #f6b60b;
   background: #222222;
+}
+
+.text-yellow{
+  color: #f6b60b;
 }
 
 /* Blog Content Area CSS */
