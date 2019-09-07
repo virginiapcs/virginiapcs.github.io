@@ -80,9 +80,14 @@
         </nav>
     </section>
     <!-- End Slider area -->
+<br><br>
 
-    <div class="col-md-offset-2 center"></div>
-
+<div class="row col-sm-10 col-sm-offset-2">
+   <h3>Please click the button if you woule like to pay for Peninsular Chinese School</h4>
+   <br>   <br>
+   <br>
+        <div id="paypal-button-container"></div>
+</div>
 
     <!-- jQuery JS -->
     <script src="js/jquery-1.12.0.min.js"></script>
@@ -108,11 +113,29 @@
     <!-- Google Sheet data retrival JS -->
     <script src="js/newsRetrival.js"></script>
 
-    <!-- <script
-    src="https://www.paypal.com/sdk/js?client-id=SB_CLIENT_ID">
-  </script> -->
-  <script src="https://www.paypal.com/sdk/js?client-id=ASO4tsQYN3wCq-O82R2iZ5cJaDk0U1EIi1innOO6JyCa_q6EIEAkM3iO5I6QlaqfmHWTnyBnPflz0VNf"></script>
-  <script>paypal.Buttons().render('div');</script>
+  <script src="https://www.paypal.com/sdk/js?client-id=AdLJmI7N8o0cl1_0WGvwGkEmMB7pHY12lAMy_0aznxrT0FYmQwwOFRI89av7UlKDmDwywb1RBhETFt6k">
+  </script>
+
+<script>
+        paypal.Buttons({
+          createOrder: function(data, actions) {
+            return actions.order.create({
+              purchase_units: [{
+                amount: {
+                  value: '100'
+                }
+              }]
+            });
+          },
+          onApprove: function(data, actions) {
+            // Capture the funds from the transaction
+            return actions.order.capture().then(function(details) {
+              // Show a success message to your buyer
+              alert('Transaction completed by ' + details.payer.name.given_name);
+            });
+          }
+        }).render('#paypal-button-container');
+      </script>
 
 </body>
 </html>
