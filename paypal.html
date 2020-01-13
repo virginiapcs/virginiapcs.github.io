@@ -82,10 +82,39 @@
 <br><br>
 
 <div class="row col-sm-10 col-sm-offset-2">
-   <h4> Please click the button if you woule like to pay $140 for Peninsular Chinese School. </h4>
-   <h4> Please understand that after a 2.9% + 0.3 fee is applied, the total is $144.20.</h4>
-   <br>   <br>
-   <br>
+  <div class="form-group" class="row col-sm-10">
+    <div class="input-group col-xs-5">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="chineseStudentNumber">Chinese School | 中文学校报名人数</label>
+      </div>
+      <select class="custom-select" id="chineseStudentNumber" onchange="calculatePayment()">
+        <option selected value="0" >Choose the number of student</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+<br>
+    <div class="input-group col-xs-5">
+      <div class="input-group-prepend">
+        <label class="input-group-text" for="clubStudentNumber">Club | 兴趣班报名人数</label>
+      </div>
+      <select class="custom-select" id="clubStudentNumber" onchange="calculatePayment()">
+        <option selected value="0">Choose the number of student</option>
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+      </select>
+    </div>
+
+  </div>
+<br>
+  <div><h4 id= "paymentAmount"></h4></div>
+  <br>
+    <h5> Please click the button if you woule like to pay for Peninsular Chinese School. </h5>
+    <h5>  Please understand that a 2.9% + 0.3 fee is applied to the fee.</h5>
+    <br> 
+    <br>
         <div id="paypal-button-container"></div>
 </div>
 
@@ -117,25 +146,35 @@
   </script>
 
 <script>
-        paypal.Buttons({
-          createOrder: function(data, actions) {
-            return actions.order.create({
-              purchase_units: [{
-                amount: {
-                  value: '144.30'
-                }
-              }]
-            });
-          },
-          onApprove: function(data, actions) {
-            // Capture the funds from the transaction
-            return actions.order.capture().then(function(details) {
-              // Show a success message to your buyer
-              alert('Transaction completed by ' + details.payer.name.given_name);
-            });
-          }
-        }).render('#paypal-button-container');
-      </script>
+function calculatePayment(){
+    var chineseStudentNumber = document.getElementById("chineseStudentNumber").value;
+    var clubStudentNumber = document.getElementById("clubStudentNumber").value;
+    var payment0 = 140 * chineseStudentNumber + 60 * clubStudentNumber - Math.max(chineseStudentNumber - 1,0) * 25 - Math.max(chineseStudentNumber - 2,0) * 10;    
+    var payment = Math.ceil((payment0 / (1-0.029) + 0.3) * 100)/100
 
+    document.getElementById("paymentAmount").value = payment;
+    document.getElementById("paymentAmount").innerHTML = "Your cost is $" + payment0 +". With fees, you will pay " + payment;
+  }
+
+        paypal.Buttons({
+            createOrder: function(data, actions) {
+              return actions.order.create({
+                purchase_units: [{
+                  amount: {
+                    value: document.getElementById("paymentAmount").value
+                    // '139.22'
+                  }
+                }]
+              });
+            },
+            onApprove: function(data, actions) {
+              // Capture the funds from the transaction
+              return actions.order.capture().then(function(details) {
+                // Show a success message to your buyer
+                alert('Transaction completed by ' + details.payer.name.given_name);
+              });
+            }
+          }).render('#paypal-button-container');
+        </script>
 </body>
 </html>
